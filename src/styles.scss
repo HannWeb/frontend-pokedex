@@ -39,3 +39,8 @@ $frontend-pokedex-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.flex-space-between{
+  justify-content: space-between;
+}
