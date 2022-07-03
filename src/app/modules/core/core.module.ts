@@ -7,7 +7,6 @@ import { PokedexMaterialModule } from '../material/material.module'
 import { CoreRoutingModule } from './core.routing.module';
 import { HeaderComponent } from './page/header/header.component';
 
-
 @NgModule({
   declarations: [
     HeaderComponent
