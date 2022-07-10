@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from '../home/components/home/home.component';
+import { HomeModule } from '../home/home.module';
 import { HeaderComponent } from './page/header/header.component';
 
 const routes: Routes = [
@@ -9,15 +9,19 @@ const routes: Routes = [
     component: HeaderComponent,
     children: [
       {
-        path: "/",
+        path: "home",
         loadChildren: ()=> import("../home/home.module").then(module => module.HomeModule)
         
       },
       {
-        path: "",
+        path: "other",
       },
       {
-        path: "",
+        path: "otherOne",
+      },
+      {
+        path: '**',
+        redirectTo: 'home'
       }
 
     ]

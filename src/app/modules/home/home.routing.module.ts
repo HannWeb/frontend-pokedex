@@ -4,14 +4,14 @@ import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
     { 
-        path: "/",
+        path: "",
         component: HomeComponent
     }
     
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
 export class HomeRoutingModule { }
