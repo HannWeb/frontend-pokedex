@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeModule } from '../home/home.module';
-import { HeaderComponent } from './page/header/header.component';
+import { HeaderComponent } from './components/header/header.component';
+import {PokemonsModule} from "src/app/pokemons/pokemons.module"
+import { AuthModule } from '../auth/auth.module';
 
 const routes: Routes = [
   { 
@@ -9,19 +10,17 @@ const routes: Routes = [
     component: HeaderComponent,
     children: [
       {
-        path: "home",
-        loadChildren: ()=> import("../home/home.module").then(module => module.HomeModule)
+        path: "",
+        loadChildren: ()=> import("src/app/pokemons/pokemons.module").then(module => PokemonsModule)
         
       },
       {
-        path: "other",
-      },
-      {
-        path: "otherOne",
+        path: "auth",
+        loadChildren: ()=> import("src/app/auth/auth.module").then(m => AuthModule)
       },
       {
         path: '**',
-        redirectTo: 'home'
+        redirectTo: ''
       }
 
     ]
