@@ -5,11 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   { 
     path: "", 
-    loadChildren: () => import("./modules/core/core.module").then(m => m.CoreModule)
+    loadChildren: () => import("src/app/core/core.module").then(m => m.CoreModule)
    },
    { 
      path: "**",
-     redirectTo: "/"
+     redirectTo: ""
    }
 ];
 
