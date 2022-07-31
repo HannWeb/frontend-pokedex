@@ -1,41 +1,38 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HeaderComponent } from './components/header/header.component';
-import {PokemonsModule} from "src/app/pokemons/pokemons.module"
-import { AuthModule } from '../auth/auth.module';
+import { UsersModule } from 'src/app/modules/users/users.module';
+import { CoreComponent } from './pages/core/core.component';
 
 const routes: Routes = [
-  { 
-    path: "",
-    component: HeaderComponent,
+  {
+    path: '',
+    component: CoreComponent,
     children: [
       {
-        path: "",
-        loadChildren: ()=> import("src/app/pokemons/pokemons.module").then(module => PokemonsModule)
-        
+        path: '',
+        loadChildren: () =>
+          import('src/app/modules/home/home.module').then((m) => m.HomeModule),
       },
-      {
-        path: "auth",
-        loadChildren: ()=> import("src/app/auth/auth.module").then(m => AuthModule)
-      },
+      // {
+      //   path: 'auth',
+      //   loadChildren: () =>
+      //     import('src/app/modules/users/users.module').then((m) => UsersModule),
+      // },
       {
         path: '**',
-        redirectTo: ''
-      }
-
-    ]
-
-    
-   }
+        redirectTo: '',
+      },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class CoreRoutingModule { }
+export class CoreRoutingModule {}
 
-// { 
+// {
 //   path: "/",
-//   loadChildren: ()=> import( "../header/header.module" ).then (module =>(module.HeaderModule)) 
-// } 
+//   loadChildren: ()=> import( "../header/header.module" ).then (module =>(module.HeaderModule))
+// }
