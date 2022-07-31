@@ -1,19 +1,19 @@
 //Modules
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { PokedexMaterialModule } from './material/material.module'
-//Componentes
+import { ContentLayoutComponent } from '../layout/content-layout/content-layout.component';
+import { ContentLayoutModule } from '../layout/content-layout/content-layout.module';
+
+//Components
 import { CoreRoutingModule } from './core.routing.module';
-import { HeaderComponent } from './components/header/header.component';
+import { CoreComponent } from './pages/core/core.component';
 
 @NgModule({
   declarations: [
-    HeaderComponent
+    CoreComponent,
   ],
   imports: [
-    CommonModule,
     CoreRoutingModule,
-    PokedexMaterialModule
+    ContentLayoutModule
   ],
   providers: [],
 
