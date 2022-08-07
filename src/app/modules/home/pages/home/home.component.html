@@ -1,16 +1,8 @@
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
-<app-card></app-card>
+<mat-paginator [length]="totalPokemon"
+              [pageSize]="10"
+              aria-label="Select page">
+</mat-paginator>
+<app-card *ngFor="let pokemon of pokemonList" 
+[pokemon]="pokemon" 
+[id]="pokemonList.indexOf(pokemon)"
+></app-card>
