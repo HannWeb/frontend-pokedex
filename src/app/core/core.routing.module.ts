@@ -13,11 +13,11 @@ const routes: Routes = [
         loadChildren: () =>
           import('src/app/modules/home/home.module').then((m) => m.HomeModule),
       },
-      // {
-      //   path: 'auth',
-      //   loadChildren: () =>
-      //     import('src/app/modules/users/users.module').then((m) => UsersModule),
-      // },
+      {
+        path: 'auth',
+        loadChildren: () =>
+          import('src/app/modules/users/users.module').then((m) => UsersModule),
+      },
       {
         path: '**',
         redirectTo: '',
@@ -31,8 +31,3 @@ const routes: Routes = [
   exports: [RouterModule],
 })
 export class CoreRoutingModule {}
-
-// {
-//   path: "/",
-//   loadChildren: ()=> import( "../header/header.module" ).then (module =>(module.HeaderModule))
-// }
